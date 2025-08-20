@@ -1,4 +1,5 @@
 import { Calendar, MapPin, Award } from "lucide-react";
+import ProfileImage from "@/components/ProfileImage";
 
 const About = () => {
   const experiences = [
@@ -44,8 +45,23 @@ const About = () => {
           </div>
 
           {/* Profile Section */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-20">
-            <div className="space-y-6">
+          <div className="grid lg:grid-cols-3 gap-12 mb-20">
+            {/* Profile Image */}
+            <div className="lg:col-span-1 flex justify-center lg:justify-start">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-primary rounded-2xl transform rotate-6 opacity-20"></div>
+                <div className="relative bg-gradient-primary p-1 rounded-2xl tech-glow">
+                  <ProfileImage
+                    imageSrc="/lovable-uploads/71bcc6c6-01ae-4148-9586-cab25e839dae.png"
+                    alt="Kiran Kumar Moguluri - Professional Photo"
+                    className="w-80 h-96 rounded-xl object-cover object-top"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Profile Content */}
+            <div className="lg:col-span-2 space-y-6">
               <h3 className="text-2xl font-semibold mb-4">Profile</h3>
               <p className="text-muted-foreground leading-relaxed">
                 I'm a dedicated software engineer with over 5 years of experience building 
@@ -75,9 +91,10 @@ const About = () => {
               </div>
             </div>
 
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold mb-4">Core Competencies</h3>
-              <div className="grid grid-cols-2 gap-4">
+            {/* Core Competencies */}
+            <div className="lg:col-span-3 mt-8">
+              <h3 className="text-2xl font-semibold mb-6 text-center">Core Competencies</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="glass-card p-4 rounded-lg">
                   <h4 className="font-semibold mb-2">Frontend</h4>
                   <p className="text-sm text-muted-foreground">React, TypeScript, Next.js, React Native</p>
